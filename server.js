@@ -120,7 +120,7 @@ app.get("/id/:id", function(req, res) {
     tags = []
     for (var tag in tagList)
       tags.push({name:tagList[tag]});
-    context = {id: id, url: url, add_date:add_date,
+    context = {id: id, url: url, add_date:Date(add_date),
                desc:desc, tags:tags};
     var now = Date.now();
     context.redis = (now - redisStartTime) || 0;
